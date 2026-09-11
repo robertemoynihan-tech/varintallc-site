@@ -14,6 +14,9 @@
 <meta property="og:image" content="https://varintallc.com/favicon.svg">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,10 +25,7 @@
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand" href="index.html">
-      <img src="favicon.svg" alt="" width="24" height="24">
-      <span>Varinta</span>
-    </a>
+    <a class="wordmark" href="index.html">Varinta</a>
     <nav class="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -48,18 +48,16 @@
     </div>
   </section>
 
-  <section class="section section--band">
+  <section class="section">
     <div class="container">
-      <div class="prose" style="max-width:44rem">
-        <h2>The short version</h2>
-        <ul class="checklist">
-          <li>Your data stays in your accounts. Varinta does not host it, copy it, or keep a warehouse of it.</li>
-          <li>You will never be asked for a password. Not once, not for any reason.</li>
-          <li>Email access is granted by you, through Google&rsquo;s own approval screen, and you can shut it off from your own account settings in about two clicks.</li>
-          <li>File access is you sharing one folder, exactly like sharing a folder with a coworker. You can unshare it the same way.</li>
-          <li>Access is always the narrowest access that makes the tool work, and nothing beyond it.</li>
-        </ul>
-      </div>
+      <h2>The short version</h2>
+      <ul class="list-plain">
+        <li>Your data stays in your accounts. Varinta does not host it, copy it, or keep a warehouse of it.</li>
+        <li>You will never be asked for a password. Not once, not for any reason.</li>
+        <li>Email access is granted by you, through Google&rsquo;s own approval screen, and you can shut it off from your own account settings in about two clicks.</li>
+        <li>File access is you sharing one folder, exactly like sharing a folder with a coworker. You can unshare it the same way.</li>
+        <li>Access is always the narrowest access that makes the tool work, and nothing beyond it.</li>
+      </ul>
     </div>
   </section>
 
@@ -70,25 +68,25 @@
         <p>Varinta does not run a platform that your information gets uploaded into. There is no Varinta server holding your sales history, no database with your customer list in it, and no account you would have to close to get your data back.</p>
         <p>The tools read from the place your data already sits &mdash; your Google Drive, your OneDrive, or a computer in your office &mdash; do their work, and write the results back to that same place. The output is normally an Excel or CSV file in a folder you own.</p>
         <p>Two practical consequences worth pointing out. If you and Varinta ever part ways, there is no data migration and nothing to request back; it never left. And if a tool stops running for any reason, every file it has already produced is still sitting in your folder and still opens in Excel.</p>
-        <p>During a build I do work against copies of your real data, because a tool tested on fake data breaks on real data. Those working copies live only as long as the project and are deleted at handoff. If you would rather I work only on data with names and identifying details stripped out, say so in scoping &mdash; that is often possible and costs nothing extra.</p>
+        <p class="mb-0">During a build, Varinta works against copies of your real data, because a tool tested on fake data breaks on real data. Those working copies live only as long as the project and are deleted at handoff. If you would rather the work be done only on data with names and identifying details stripped out, say so in scoping &mdash; that is often possible and costs nothing extra.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section--band">
+  <section class="section">
     <div class="container">
       <div class="prose">
         <h2>2. No password sharing, ever</h2>
         <p>Varinta will never ask for your email password, your accounting login, or any other account password. If you are ever asked for one by someone claiming to be from Varinta, that is not Varinta.</p>
-        <p>This is not just a courtesy to you. Password sharing is bad for both sides, and it is worth understanding why so the rule sticks:</p>
-        <ul class="checklist">
-          <li><strong>It is all-or-nothing.</strong> Your password does not open one folder. It opens everything the account can reach &mdash; every message, every file, every connected app.</li>
-          <li><strong>It leaves no trail.</strong> Anything done with your password looks like it was done by you. Nobody can later tell the two apart, which protects neither of us.</li>
-          <li><strong>You cannot switch it off cleanly.</strong> Revoking a shared password means changing it and re-logging in everywhere. Revoking proper access is two clicks.</li>
-          <li><strong>It usually violates your own agreements.</strong> Most business software terms prohibit sharing credentials, and it can void support or insurance coverage.</li>
-        </ul>
-        <p>The methods below exist precisely so nobody ever needs your password.</p>
+        <p>This is not just a courtesy to you. Password sharing is bad for both sides, and it is worth understanding why so the rule sticks.</p>
       </div>
+      <ul class="list-plain">
+        <li><strong>It is all-or-nothing.</strong> Your password does not open one folder. It opens everything the account can reach &mdash; every message, every file, every connected app.</li>
+        <li><strong>It leaves no trail.</strong> Anything done with your password looks like it was done by you. Nobody can later tell the two apart, which protects neither side.</li>
+        <li><strong>You cannot switch it off cleanly.</strong> Revoking a shared password means changing it and re-logging in everywhere. Revoking proper access is two clicks.</li>
+        <li><strong>It usually violates your own agreements.</strong> Most business software terms prohibit sharing credentials, and it can void support or insurance coverage.</li>
+      </ul>
+      <p class="prose mb-0">The methods below exist precisely so nobody ever needs your password.</p>
     </div>
   </section>
 
@@ -96,43 +94,15 @@
     <div class="container">
       <div class="prose">
         <h2>3. Email access uses Google&rsquo;s own approval screen</h2>
-        <p>When a tool needs to read your email &mdash; for example, to pull vendor invoices out of attachments &mdash; access is granted through Google OAuth. That is Google&rsquo;s standard approval system, the same one you have already used if you have ever connected a calendar app or a scheduling tool to your Google account.</p>
-        <p>What actually happens:</p>
+        <p>When a tool needs to read your email &mdash; for example, to pull vendor invoices out of attachments &mdash; access is granted through Google OAuth. That is Google&rsquo;s standard approval system, the same one you have already used if you have ever connected a calendar app or a scheduling tool to your Google account. What actually happens:</p>
         <ol>
-          <li>I send you a link. You click it while signed into your own Google account.</li>
+          <li>Varinta sends you a link. You click it while signed into your own Google account.</li>
           <li>Google &mdash; not Varinta &mdash; shows you a screen listing the exact permissions being requested. For an invoice tool, that is typically read-only access to your mail: the tool can read messages, and cannot send, delete, or change anything.</li>
           <li>You read the list and click Allow, or you close the window and nothing happens.</li>
         </ol>
-        <p>You are never typing a password into anything of mine. You type it into Google, if at all, and Google hands back a permission token that is limited to what that screen described.</p>
-
-        <div class="callout mt-5" style="max-width:44rem">
-          <h3>Turning it off is yours to do, any time</h3>
-          <p>Go to your Google Account, open the Security section, find &ldquo;Your connections to third-party apps &amp; services,&rdquo; select Varinta, and remove access. That is it &mdash; roughly two clicks once you are on the page.</p>
-          <p class="mb-0">You do not have to email me first, wait for a reply, or explain why. The switch is in your account, not mine, and the moment you flip it the tool stops being able to read anything. That is the point: the control belongs to you, permanently, not to the vendor.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--band">
-    <div class="container">
-      <div class="prose">
-        <h2>4. File access is one shared folder, like sharing with a coworker</h2>
-        <p>For Drive and file access, Varinta uses a dedicated Google service account. Despite the name, you can think of it as an employee-style account that belongs to the software rather than to a person &mdash; it has its own email-style address and no password anyone logs in with.</p>
-        <p>Setting it up is something you already know how to do:</p>
-        <ol>
-          <li>You create or pick one folder in your Drive &mdash; just the folder the tool needs.</li>
-          <li>You click Share on that folder, exactly as you would to share it with a new hire.</li>
-          <li>You paste in the Varinta service account address I give you, choose Viewer or Editor depending on whether the tool needs to write results back, and click Send.</li>
-        </ol>
-        <p>What that buys you:</p>
-        <ul class="checklist">
-          <li><strong>Scoped.</strong> Access reaches that folder and what is inside it. Nothing else in your Drive is visible, because nothing else was shared.</li>
-          <li><strong>Visible.</strong> It shows up in your own sharing panel, next to every other person you have shared with. Nothing is hidden from the account owner.</li>
-          <li><strong>Removable by you.</strong> Open the folder&rsquo;s sharing settings, remove the service account, done. Same two clicks, no call to me required.</li>
-          <li><strong>Auditable.</strong> Because the service account is its own identity, activity attributed to it is distinguishable from activity by you or your staff &mdash; which is exactly what password sharing destroys.</li>
-        </ul>
-        <p>If you use OneDrive or SharePoint instead, the shape is the same: you share one folder with one identity you can see and remove. If the tool runs entirely on a computer in your office, there is no cloud access at all &mdash; it reads local files and writes local files.</p>
+        <p>You are never typing a password into anything of Varinta&rsquo;s. You type it into Google, if at all, and Google hands back a permission token that is limited to what that screen described.</p>
+        <p>Turning it off is yours to do, at any time. Go to your Google Account, open the Security section, find &ldquo;Your connections to third-party apps &amp; services,&rdquo; select Varinta, and remove access. That is it &mdash; roughly two clicks once you are on the page.</p>
+        <p class="mb-0">You do not have to send an email first, wait for a reply, or explain why. The switch is in your account, not Varinta&rsquo;s, and the moment you flip it the tool stops being able to read anything. That is the point: the control belongs to you, permanently, not to the vendor.</p>
       </div>
     </div>
   </section>
@@ -140,34 +110,49 @@
   <section class="section">
     <div class="container">
       <div class="prose">
+        <h2>4. File access is one shared folder, like sharing with a coworker</h2>
+        <p>For Drive and file access, Varinta uses a dedicated Google service account. Despite the name, you can think of it as an employee-style account that belongs to the software rather than to a person &mdash; it has its own email-style address and no password anyone logs in with. Setting it up is something you already know how to do:</p>
+        <ol>
+          <li>You create or pick one folder in your Drive &mdash; just the folder the tool needs.</li>
+          <li>You click Share on that folder, exactly as you would to share it with a new hire.</li>
+          <li>You paste in the Varinta service account address you are given, choose Viewer or Editor depending on whether the tool needs to write results back, and click Send.</li>
+        </ol>
+        <p>What that buys you:</p>
+      </div>
+      <ul class="list-plain">
+        <li><strong>Scoped.</strong> Access reaches that folder and what is inside it. Nothing else in your Drive is visible, because nothing else was shared.</li>
+        <li><strong>Visible.</strong> It shows up in your own sharing panel, next to every other person you have shared with. Nothing is hidden from the account owner.</li>
+        <li><strong>Removable by you.</strong> Open the folder&rsquo;s sharing settings, remove the service account, done. Same two clicks, no call required.</li>
+        <li><strong>Auditable.</strong> Because the service account is its own identity, activity attributed to it is distinguishable from activity by you or your staff &mdash; which is exactly what password sharing destroys.</li>
+      </ul>
+      <p class="prose mb-0">If you use OneDrive or SharePoint instead, the shape is the same: you share one folder with one identity you can see and remove. If the tool runs entirely on a computer in your office, there is no cloud access at all &mdash; it reads local files and writes local files.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
         <h2>5. Least privilege, as a working rule</h2>
-        <p>Least privilege is a plain idea with a technical-sounding name: ask for the smallest amount of access that lets the job get done, and nothing more. Varinta treats it as a rule, not an aspiration.</p>
-        <p>In practice that means:</p>
-        <ul class="checklist">
-          <li>Read-only wherever reading is enough. A tool that only extracts invoice data has no business being able to delete email.</li>
-          <li>One folder rather than your whole Drive, even when whole-Drive access would be more convenient for me.</li>
-          <li>One mailbox rather than your whole organization.</li>
-          <li>Access that ends when the work does. If a build needed access that ongoing operation does not, that access comes off at handoff.</li>
-        </ul>
-        <p>When we scope a project, the access it requires is written down in that same one-page scope, before anything starts. If you look at the list and think it is more than the job needs, say so &mdash; that is a fair challenge and the answer should be a specific reason, not a shrug.</p>
+        <p>Least privilege is a plain idea with a technical-sounding name: ask for the smallest amount of access that lets the job get done, and nothing more. Varinta treats it as a rule, not an aspiration. In practice that means read-only wherever reading is enough &mdash; a tool that only extracts invoice data has no business being able to delete email. One folder rather than your whole Drive, even when whole-Drive access would be more convenient to build against. One mailbox rather than your whole organization. And access that ends when the work does: if a build needed access that ongoing operation does not, that access comes off at handoff.</p>
+        <p class="mb-0">When a project is scoped, the access it requires is written down in that same one-page scope, before anything starts. If you look at the list and think it is more than the job needs, say so &mdash; that is a fair challenge and the answer should be a specific reason, not a shrug.</p>
       </div>
     </div>
   </section>
 
-  <section class="section section--band">
+  <section class="section">
     <div class="container">
-      <div class="prose" style="max-width:44rem">
+      <div class="prose">
         <h2>What Varinta will never ask you for</h2>
         <p>Keep this list. If any of it is ever requested, something is wrong &mdash; whether the request appears to come from Varinta or from anyone else.</p>
-        <ul class="checklist checklist--never">
-          <li><strong>Your password.</strong> Not for email, not for accounting, not for your point-of-sale, not &ldquo;just temporarily.&rdquo;</li>
-          <li><strong>A two-factor code.</strong> The six-digit code from your phone, an authenticator app, or a text message. Those exist to stop exactly this request. No legitimate vendor needs one.</li>
-          <li><strong>Full account access when a single folder will do.</strong> If the tool works on one folder, one folder is what gets shared.</li>
-          <li><strong>Admin rights to your Google Workspace or Microsoft 365 tenant</strong> when a single mailbox or folder is sufficient.</li>
-          <li><strong>Permission to send email as you</strong> unless sending is literally the deliverable, in which case it is written into the scope and you approve it knowingly.</li>
-          <li><strong>Your customer list, employee records, or payment card data</strong> when the tool does not need them. If a project genuinely touches sensitive records, that gets discussed openly in scoping first.</li>
-        </ul>
       </div>
+      <ul class="list-plain">
+        <li><strong>Your password.</strong> Not for email, not for accounting, not for your point-of-sale, not &ldquo;just temporarily.&rdquo;</li>
+        <li><strong>A two-factor code.</strong> The six-digit code from your phone, an authenticator app, or a text message. Those exist to stop exactly this request. No legitimate vendor needs one.</li>
+        <li><strong>Full account access when a single folder will do.</strong> If the tool works on one folder, one folder is what gets shared.</li>
+        <li><strong>Admin rights to your Google Workspace or Microsoft 365 tenant</strong> when a single mailbox or folder is sufficient.</li>
+        <li><strong>Permission to send email as you</strong> unless sending is literally the deliverable, in which case it is written into the scope and you approve it knowingly.</li>
+        <li><strong>Your customer list, employee records, or payment card data</strong> when the tool does not need them. If a project genuinely touches sensitive records, that gets discussed openly in scoping first.</li>
+      </ul>
     </div>
   </section>
 
@@ -176,9 +161,10 @@
       <div class="prose">
         <h2>A couple of things this page does not claim</h2>
         <p>Varinta is a small shop and would rather be straight with you than impressive. This page makes no claim to any formal certification, audit, or compliance program, because there is not one to claim. What is described above is how the access actually works, which you can verify yourself &mdash; the approval screen is Google&rsquo;s, the sharing panel is yours, and both are visible without taking anybody&rsquo;s word for it.</p>
+        <p class="mb-0">Ask any question about access before you sign anything. If your answer is &ldquo;I would need my IT person to look at this first,&rdquo; that is a good instinct, and Varinta is happy to talk to them directly.</p>
       </div>
 
-      <div class="placeholder mt-6" style="max-width:44rem">
+      <div class="placeholder">
         <span class="placeholder__tag">Placeholder &mdash; to add when true</span>
         <ul class="mb-0">
           <li>[PLACEHOLDER] Business insurance (general liability / errors &amp; omissions) &mdash; add carrier and coverage summary once a policy is in place. Do not state this until it is.</li>
@@ -188,16 +174,8 @@
           <li>[PLACEHOLDER] If any client work ever touches regulated data (health, payment, or similar), state the specific handling arrangement here. Do not make a general compliance claim.</li>
         </ul>
       </div>
-    </div>
-  </section>
 
-  <section class="section section--band">
-    <div class="container">
-      <div class="prose">
-        <h2>Still have a question about access?</h2>
-        <p>Ask it before you sign anything. If your answer is &ldquo;I would need my IT person to look at this first,&rdquo; that is a good instinct and I am happy to talk to them directly.</p>
-        <p class="mb-0"><a class="button" href="contact.html">Ask a question</a></p>
-      </div>
+      <p class="mb-0"><a class="cta" href="contact.html">Ask a question about access &rarr;</a></p>
     </div>
   </section>
 
@@ -206,7 +184,8 @@
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div>
-      <h2>Varinta</h2>
+      <a class="wordmark" href="index.html">Varinta</a>
+      <p class="mb-0"><a href="mailto:[PLACEHOLDER_EMAIL]">[PLACEHOLDER_EMAIL]</a></p>
     </div>
     <nav aria-label="Footer">
       <ul>
@@ -219,7 +198,7 @@
     </nav>
   </div>
   <div class="container">
-    <p class="site-footer__legal mb-0">&copy; 2026 Varinta. All rights reserved. <!-- [PLACEHOLDER] Legal entity name, e.g. "Varinta LLC", once formation is filed. --></p>
+    <p class="site-footer__legal mb-0">Varinta LLC &middot; San Diego <!-- [PLACEHOLDER] Confirm the legal entity name once the Articles of Organization are filed. --></p>
   </div>
 </footer>
 

@@ -39,11 +39,11 @@ build step, no npm, nothing to compile. Whatever is in this folder is what the w
 |------|------------|
 | `index.html` | Home page |
 | `services.html` | How a build works, plus a pricing placeholder |
-| `about.html` | Founder background |
+| `about.html` | A signed letter from the founder — the one first-person page |
 | `security.html` | Security & Your Data |
 | `contact.html` | Contact form and email link |
-| `styles.css` | All styling for the whole site, including the three color palettes |
-| `favicon.svg` | The little "V" icon that shows in a browser tab |
+| `styles.css` | All styling for the whole site, including the three color palettes. No JavaScript file exists, by design — see **Design system** below |
+| `favicon.svg` | The little brass "V" icon that shows in a browser tab |
 | `sitemap.xml` | Tells search engines which pages exist |
 | `robots.txt` | Tells search engines they are welcome |
 | `PLACEHOLDERS.md` | Every `[PLACEHOLDER]` on the site, in one list |
@@ -202,14 +202,77 @@ DNS configures itself. You can switch later by repointing DNS.
 
 ---
 
-## Changing the color palette
+## Design system
 
-Open `styles.css`. At the top there are three palette blocks. Option 1, **Ink & Sand**, is
-active. Options 2 and 3 are commented out.
+The look is meant to read as an old-line private client firm: dark, quiet, expensive, and above
+all **familiar**. The audience is small-business owners who are not looking for a novel web
+experience. Everything below exists to make the site behave the way they already expect a
+website to behave.
 
-To switch: wrap the active `:root { ... }` block in `/*` and `*/`, then remove the `/*` and
-`*/` around the one you want. Save, refresh the browser. Nothing else in the file needs to
-change — every color on the site comes from those variables.
+### Palette
+
+All color lives in CSS custom properties at the very top of `styles.css`. There are three
+palettes; one is active.
+
+| Palette | Ground | Accent | When to use |
+|---|---|---|---|
+| **Graphite & Brass** (active) | `#12141a` graphite | `#8b5e34` aged brass, `#b07a45` for links | The default. |
+| **Oxblood** | same graphite | `#7a2b2b`, `#c86a6a` for links | If the brass ever reads too warm. |
+| **Ivory** | `#f4f1ea` parchment | same brass | Light escape hatch if the dark site reads as too severe for a particular audience. |
+
+**To switch:** wrap the active `:root { ... }` block in `/*` and `*/`, then delete the `/*` and
+`*/` around the block you want. Save, refresh. Nothing else needs to change — every color on
+the site comes from those variables.
+
+Contrast was measured, not eyeballed. Body text `#e8e4da` on graphite is **14.5:1**, muted text
+`#9a9daa` is **6.8:1**, and link brass `#b07a45` is **5.0:1** on the page background and
+**4.5:1** on the recessed form-field surface. All pass WCAG AA for body-size text. The full brass
+`#8b5e34` measures only 3.3:1, so it is used for rules, borders, and the nav underline — never
+for text. The same check is why the Oxblood palette's link color is lightened to `#c86a6a`; the
+obvious `#b04848` only reaches 3.4:1.
+
+### Type
+
+Two families, loaded from Google Fonts with one stylesheet request plus two `preconnect` hints:
+
+- **Playfair Display** 500/600 — the wordmark, h1, h2, h3, and definition-list labels. Falls back
+  to Georgia.
+- **Inter** 400/600 — body, nav, forms, eyebrow labels. Falls back to the system sans stack.
+
+Body text is 18px on desktop, 17px on mobile, line-height 1.6, and the measure is capped at 66
+characters. Headlines are large relative to the body (2.75rem / 2rem for h1) at weight 500 — the
+size does the work, not weight or capitals. Numerals are old-style by default.
+
+### Structure
+
+No cards, no boxes, no shadows, no gradients, no rounded corners. Structure comes from 1px
+hairline rules in `--color-rule` and from generous vertical padding (5rem desktop, 3rem mobile).
+"What you get" content uses two-column definition lists — label left, sentence right — because
+that reads as a printed prospectus rather than a SaaS feature grid.
+
+Each page has **exactly one** call to action, styled as an underlined text link in the accent
+color with a trailing arrow. The only button on the site is the contact form's submit: a flat
+rectangle with a 1px accent border that fills on hover.
+
+### The no-animation rule
+
+There is no JavaScript anywhere on this site, and nothing on it moves. No transitions except a
+flat color change on `:hover` and `:focus`, no scroll reveals, no parallax, no sticky or fixed
+header, no hamburger menu. Below 640px the nav simply stacks into a plain always-visible list —
+there is no toggle to discover.
+
+This is not minimalism for its own sake. The client base is older owners who are being asked to
+trust a stranger with access to their email and files. Motion reads as marketing; a page that
+sits still reads as a document. It is also the most robust possible version of the site: it works
+with JavaScript disabled, on an old browser, on a bad connection, and with a screen reader,
+and there is nothing to break. If you edit the CSS later, keep it that way — the rule is written
+at the top of `styles.css` as well.
+
+### Accessibility contract
+
+Every page has a skip link, `aria-current="page"` on the active nav item, semantic landmarks,
+visible focus rings, and links that are always underlined. Keep all five of those if you change
+anything.
 
 ---
 

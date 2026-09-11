@@ -1,7 +1,8 @@
 # Placeholders — everything to fill in before go-live
 
 Every `[PLACEHOLDER]` on the site, grouped by file. Work top to bottom and the site is done.
-Search each file for the literal string `[PLACEHOLDER]` to confirm nothing is left.
+Search each file for the literal string `PLACEHOLDER` to confirm nothing is left. Note that a
+few placeholders are HTML comments rather than visible blocks — the search below finds those too.
 
 ---
 
@@ -9,28 +10,35 @@ Search each file for the literal string `[PLACEHOLDER]` to confirm nothing is le
 
 | Where | What | Notes |
 |-------|------|-------|
-| Footer, HTML comment on the copyright line | Legal entity name | Currently reads "© 2026 Varinta." Change to "Varinta LLC" (or whichever suffix you settle on) once the Articles of Organization are filed. Must be updated in **all five** HTML files. |
+| Footer, email line | `[PLACEHOLDER_EMAIL]` | Your business email. It appears **twice per page** in the footer — once in the `href="mailto:..."` and once as the visible link text. Replace both, in all five files. |
+| Footer, HTML comment on the entity line | Legal entity name | The footer now reads "Varinta LLC · San Diego". Confirm the suffix once the Articles of Organization are filed, and change it in **all five** HTML files if it is not "LLC". |
 
 Also site-wide, not marked as placeholders but check before launch:
 
-- The copyright year is hard-coded as **2026** in all five footers.
 - Open Graph `og:image` on every page points to `https://varintallc.com/favicon.svg`. A proper
-  1200×630 PNG social preview image would look far better in link previews. Optional.
-- `favicon.svg` is a plain "V" mark. Replace if you commission a real logo.
+  1200×630 PNG social preview image would look far better in link previews. Optional. If you
+  make one, use the site's own colors: graphite `#12141a` ground, parchment `#e8e4da` wordmark.
+- `favicon.svg` is a plain brass "V" on graphite, recolored to match the site. Replace if you
+  commission a real logo.
+- The footer no longer carries a copyright line or a tagline. That is deliberate — nothing to
+  update each January.
 
 ---
 
 ## index.html
 
+The home page carries **no visible placeholder box**, on purpose: a dashed "placeholder" panel on
+the first screen a prospect sees does more harm than an absent section.
+
 | Location | Placeholder | What to supply |
 |----------|-------------|----------------|
-| "Who this is for" section, dashed box | Client proof block | Client logos, a short testimonial, or a one-paragraph result summary. Only after the first reference build is complete **and** you have written permission to name the client. Delete the whole `.placeholder` div if you would rather ship without it than ship an empty box. |
+| HTML comment after the last `</section>` | Client proof | Client logos, a short testimonial, or a one-paragraph result summary, added as a fourth section. Only after the first reference build is complete **and** you have written permission to name the client. If you never add it, delete the comment. |
 
 ---
 
 ## services.html
 
-All of these sit in the dashed **Pricing** box at the bottom of the page.
+All visible placeholders sit in the dashed **Pricing** box at the bottom of the page.
 
 | Placeholder | What to supply |
 |-------------|----------------|
@@ -39,22 +47,24 @@ All of these sit in the dashed **Pricing** box at the bottom of the page.
 | After handoff | Support window, hourly rate for changes, or optional maintenance arrangement. |
 | Payment terms | Deposit, milestones, net terms. |
 
-Once decided, replace the whole dashed block with real prose. A pricing page with a visible
-"placeholder" box is worse than no pricing section at all, so delete the box if you decide
-not to publish pricing.
+Once decided, replace the whole dashed block with plain prose. A pricing section with a visible
+"placeholder" box is worse than no pricing section at all, so delete the box if you decide not to
+publish pricing. The call-to-action link below it stays either way.
 
 ---
 
 ## about.html
 
-All in the dashed box near the bottom.
+The About page is a signed letter. Two dashed boxes sit inside and below it.
 
 | Placeholder | What to supply |
 |-------------|----------------|
-| Founder name and headshot | Your name in the body copy and a photo. A real photo materially helps trust on a one-person site. Remember `alt` text on the image. |
-| Support commitment | e.g. "response within one business day." This is an open item in your session notes — decide it. |
+| `[PLACEHOLDER: photo]` | Headshot, placed directly above the "Robert Moynihan" signature. A real photo materially helps trust on a one-person site. Remember `alt` text on the image — something like `alt="Robert Moynihan"`. |
+| Support commitment | e.g. "response within one business day." Keep it consistent with the Response time row on the Contact page. |
 | Legal entity name and state | Once formation is filed. |
 | LinkedIn profile URL | Or delete that line. |
+
+The founder name is no longer a placeholder — it is set in the signature block.
 
 ---
 
@@ -81,10 +91,23 @@ themselves. Keep it that way.
 | Location | Placeholder | What to supply |
 |----------|-------------|----------------|
 | `<form action="...">` | `[PLACEHOLDER_FORM_ENDPOINT]` | Your Formspree endpoint, e.g. `https://formspree.io/f/xxxxxxxx`. Create a free form at formspree.io. Any equivalent service (Basin, Getform, Netlify Forms) works — swap the action URL. **The form silently fails until this is set.** Submit it once yourself to confirm. |
-| Mailto link, two places | `[PLACEHOLDER_EMAIL]` | Your business email. It appears twice on the same line — in the `href="mailto:..."` and as the visible link text. Replace both. |
+| "Or email directly" paragraph | `[PLACEHOLDER_EMAIL]` | Your business email, twice on the same line — `href="mailto:..."` and the visible text. This is in addition to the two in the footer. |
 | "Response time" row | Response commitment | Same answer as the About page. Keep them consistent. |
 | "Phone" row | Business phone number | Or delete that `<div>` from the `<dl>`. |
 | "LinkedIn" row | Profile URL | Or delete that `<div>`. |
+
+---
+
+## Standing copy rules (do not break these when filling placeholders)
+
+- No invented clients, testimonials, metrics, pricing, or certifications.
+- Never reintroduce any "free to run / no tokens / costs you nothing" claim. A client may well
+  pay an outside API or service provider directly; the accurate statement is the one already on
+  the site — there is **no Varinta subscription**, and if a tool needs an outside service account
+  it is opened in the client's name and they see the bill.
+- Keep the words "hard-coded" where they appear. That word is the positioning.
+- Home page prose stays short. It is currently about 120 words outside the nav and footer, and
+  that is the budget.
 
 ---
 
@@ -94,9 +117,8 @@ These do not block the site from working, but they affect what it should say:
 
 - Suffix: Varinta LLC / Works / Group — determines the footer entity name.
 - BizFile Online and USPTO TESS name searches — do these before the site is public.
-- `varintallc.com` purchase — required before go-live.
-- The one painful problem to lead the multi-location pitch with. If you pick it, the home
-  page headline and the "What the tools do" cards should be rewritten around it. Right now
+- The one painful problem to lead the multi-location pitch with. If you pick it, the home page
+  headline and the four rows under "What Varinta builds" should be rewritten around it. Right now
   they are deliberately general.
 - Vertical choice. If you commit to one industry, the whole site gets stronger by naming it.
 
@@ -116,4 +138,5 @@ On Windows PowerShell:
 Select-String -Path *.html -Pattern "PLACEHOLDER"
 ```
 
-Zero results means the site is ready to publish.
+The only remaining hit should be the intentional client-proof comment in `index.html`, if you
+have chosen to leave it there.

@@ -14,6 +14,9 @@
 <meta property="og:image" content="https://varintallc.com/favicon.svg">
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,10 +25,7 @@
 
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand" href="index.html">
-      <img src="favicon.svg" alt="" width="24" height="24">
-      <span>Varinta</span>
-    </a>
+    <a class="wordmark" href="index.html">Varinta</a>
     <nav class="site-nav" aria-label="Main">
       <ul>
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -42,76 +42,56 @@
 
   <section class="hero">
     <div class="container">
-      <h1>Custom data tools for small businesses that run on spreadsheets.</h1>
-      <p class="lead">You already have the data. It is spread across your purchasing system, your email, three spreadsheets, and someone&rsquo;s memory. Varinta builds a hard-coded tool that pulls it together and gives you a straight answer, on your own computer, in your own files.</p>
-      <div class="hero__actions">
-        <a class="button" href="contact.html">Start a conversation</a>
-        <a class="button button--secondary" href="services.html">See how a build works</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section">
-    <div class="container">
-      <div class="callout prose" style="max-width:44rem">
-        <p class="eyebrow">The difference worth knowing</p>
-        <h2>These tools are hard-coded. They are not an AI wrapper.</h2>
-        <p>A lot of what is being sold right now is a thin layer over a language model. Every time it runs, it sends your data to a vendor and charges you for the privilege. The answer can also change between runs, because the model is guessing.</p>
-        <p class="mb-0">Varinta builds hard-coded, deterministic tools. The rules are written in code, not guessed by a model. The same inputs produce the same outputs, every time, and you can ask exactly why a number came out the way it did.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--band">
-    <div class="container">
-      <div class="prose">
-        <h2>Built to be boring and to outlive the project</h2>
-      </div>
-      <div class="grid grid--4 mt-6">
-        <div class="card card--plain">
-          <h3>Your data never leaves your accounts</h3>
-          <p>Tools read from your Google Drive, OneDrive, or computer and write results back to the same place. Varinta hosts nothing and stores nothing. <a href="security.html">How access works</a>.</p>
-        </div>
-        <div class="card card--plain">
-          <h3>The output is a file you already know</h3>
-          <p>Usually an Excel or CSV file sitting in a folder you own. If the tool stopped running tomorrow, every file you have is still there and still readable.</p>
-        </div>
-        <div class="card card--plain">
-          <h3>No Varinta subscription</h3>
-          <p>You pay for the build. The hard-coded logic is yours to run with no per-seat or per-run fee from Varinta. If a tool needs an outside service account, it is opened in your name and you see the bill.</p>
-        </div>
-        <div class="card card--plain">
-          <h3>Scoped to one problem at a time</h3>
-          <p>Small, finished projects with a written scope and an end date, not an open-ended engagement that quietly becomes a retainer.</p>
-        </div>
-      </div>
+      <h1>Custom, hard-coded data tools for small businesses.</h1>
+      <p class="lead">Varinta builds one tool for one problem and hands it over finished.</p>
+      <p class="mb-0"><a class="cta" href="contact.html">Start a conversation &rarr;</a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="prose">
-        <h2>Who this is for</h2>
-        <p>Consumer-facing businesses under roughly $50 million in revenue &mdash; clinics, shops, service companies, distributors, multi-location operators. Usually the owner is still the person who knows where everything is, and that is exactly the bottleneck worth removing.</p>
-        <p>If you are already running a system that does this well, you do not need Varinta. The work worth paying for is the twenty percent your software will not do.</p>
-        <p class="mb-0"><a class="button" href="contact.html">Get in touch</a></p>
-      </div>
-
-      <div class="placeholder mt-6" style="max-width:44rem">
-        <span class="placeholder__tag">Placeholder &mdash; client proof</span>
-        <p class="mb-0">[PLACEHOLDER] Client logos, a short testimonial, or a one-paragraph result summary go here once the first reference build is complete and permission to name the client is in writing. Leave this block empty rather than filling it with anything unverified.</p>
-      </div>
+      <h2>What Varinta builds</h2>
+      <dl class="deflist">
+        <div>
+          <dt>Your data stays in your accounts</dt>
+          <dd>Tools read and write in your own Drive, OneDrive, or computer.</dd>
+        </div>
+        <div>
+          <dt>Output is a file you already know</dt>
+          <dd>Usually an Excel or CSV file in a folder you own.</dd>
+        </div>
+        <div>
+          <dt>No Varinta subscription</dt>
+          <dd>You pay for the build. The hard-coded logic is yours to run.</dd>
+        </div>
+        <div>
+          <dt>Scoped to one problem</dt>
+          <dd>A written scope and an end date, not an open-ended engagement.</dd>
+        </div>
+      </dl>
     </div>
   </section>
 
+  <section class="section">
+    <div class="container">
+      <h2>Who this is for</h2>
+      <p class="prose mb-0">Consumer-facing businesses under roughly $50 million in revenue &mdash; clinics, shops, service companies, distributors. If you already run a system that does this well, you do not need Varinta.</p>
+    </div>
+  </section>
+
+  <!-- [PLACEHOLDER] Client proof. Client logos, a short testimonial, or a
+       one-paragraph result summary may be added here as a fourth section once
+       the first reference build is complete AND written permission to name the
+       client is on file. Kept as a comment rather than an empty box so the home
+       page stays clean. Do not publish anything unverified. -->
 
 </main>
 
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div>
-      <h2>Varinta</h2>
+      <a class="wordmark" href="index.html">Varinta</a>
+      <p class="mb-0"><a href="mailto:[PLACEHOLDER_EMAIL]">[PLACEHOLDER_EMAIL]</a></p>
     </div>
     <nav aria-label="Footer">
       <ul>
@@ -124,7 +104,7 @@
     </nav>
   </div>
   <div class="container">
-    <p class="site-footer__legal mb-0">&copy; 2026 Varinta. All rights reserved. <!-- [PLACEHOLDER] Legal entity name, e.g. "Varinta LLC", once formation is filed. --></p>
+    <p class="site-footer__legal mb-0">Varinta LLC &middot; San Diego <!-- [PLACEHOLDER] Confirm the legal entity name once the Articles of Organization are filed. --></p>
   </div>
 </footer>
 
