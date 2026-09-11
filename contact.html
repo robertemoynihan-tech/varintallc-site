@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Varinta</title>
+<meta name="description" content="Get in touch with Varinta about a custom data tool for your business. Send a message or email directly. San Diego, California.">
+<link rel="canonical" href="https://varintallc.com/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Varinta">
+<meta property="og:url" content="https://varintallc.com/contact.html">
+<meta property="og:title" content="Contact — Varinta">
+<meta property="og:description" content="Tell me the decision you are guessing at. Short message, straight answer, no sales sequence.">
+<meta property="og:image" content="https://varintallc.com/favicon.svg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="favicon.svg" alt="" width="24" height="24">
+      <span>Varinta</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="security.html">Security &amp; Your Data</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Contact</p>
+      <h1>Tell me what you are trying to find out</h1>
+      <p class="lead">A few sentences is enough to start. You will get a real reply from the person who would do the work, not an automated sequence.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2">
+
+        <div>
+          <h2>Send a message</h2>
+          <!-- [PLACEHOLDER] Replace the action URL with your real Formspree (or similar) endpoint,
+               e.g. https://formspree.io/f/xxxxxxxx -->
+          <form class="form" action="[PLACEHOLDER_FORM_ENDPOINT]" method="POST">
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+
+            <div class="field">
+              <label for="company">Business name
+                <span class="hint">Optional.</span>
+              </label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+
+            <div class="field">
+              <label for="message">What is the decision you are guessing at?
+                <span class="hint">Or just describe the report someone rebuilds by hand every month.</span>
+              </label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <!-- Simple spam trap. Hidden from people, usually filled in by bots. -->
+            <div class="visually-hidden" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button class="button" type="submit">Send message</button>
+          </form>
+        </div>
+
+        <div>
+          <h2>Or email directly</h2>
+          <p>If you would rather not use a form, that is fine.</p>
+          <p><a href="mailto:[PLACEHOLDER_EMAIL]">[PLACEHOLDER_EMAIL]</a></p>
+
+          <dl class="facts mt-6">
+            <div>
+              <dt>Location</dt>
+              <dd>San Diego, California. Remote work anywhere in the U.S.</dd>
+            </div>
+            <div>
+              <dt>Response time</dt>
+              <dd>[PLACEHOLDER] e.g. within one business day.</dd>
+            </div>
+            <div>
+              <dt>Phone</dt>
+              <dd>[PLACEHOLDER] Business phone number, or delete this row.</dd>
+            </div>
+            <div>
+              <dt>LinkedIn</dt>
+              <dd>[PLACEHOLDER] Profile URL, or delete this row.</dd>
+            </div>
+          </dl>
+
+          <div class="callout mt-6">
+            <h3>What happens next</h3>
+            <p>A short reply, then a call or a coffee if it sounds like a fit. The first conversation is discovery, not a pitch &mdash; mostly me asking how the work happens now.</p>
+            <p class="mb-0">Nothing in that conversation requires giving me access to anything. If it goes further, <a href="security.html">how access works</a> is written out in advance.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div>
+      <h2>Varinta</h2>
+      <p class="mb-0">Custom data tools for consumer-facing small businesses. Based in San Diego, California.</p>
+    </div>
+    <nav aria-label="Footer">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="security.html">Security &amp; Your Data</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <p class="site-footer__legal mb-0">&copy; 2026 Varinta. All rights reserved. <!-- [PLACEHOLDER] Legal entity name, e.g. "Varinta LLC", once formation is filed. --></p>
+  </div>
+</footer>
+
+</body>
+</html>
