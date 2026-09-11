@@ -264,6 +264,10 @@ code {
   color: var(--color-text);
   text-decoration: none;
 }
+
+.site-header .wordmark {
+  font-size: 1.7875rem; /* 30% larger than the footer wordmark */
+}
 .wordmark:hover,
 .wordmark:focus { color: var(--color-link); }
 
