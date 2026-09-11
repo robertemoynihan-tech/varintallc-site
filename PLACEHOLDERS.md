@@ -38,10 +38,9 @@ the first screen a prospect sees does more harm than an absent section.
 
 ## services.html
 
-All visible placeholders sit in the dashed **Pricing** box at the bottom of the page.
+No placeholders. The pricing section was removed on 2026-09-11 by decision; pricing is quoted per scope. If pricing is ever published, add a plain-prose section rather than a placeholder box.
 
-| Placeholder | What to supply |
-|-------------|----------------|
+-------------|----------------|
 | Project price | Fixed price or range for a standard two-week build. Set it from tracked hours on the first reference build. |
 | Discovery cost | Whether discovery is free or paid, and the amount if paid. |
 | After handoff | Support window, hourly rate for changes, or optional maintenance arrangement. |
