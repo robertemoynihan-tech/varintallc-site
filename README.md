@@ -1,3 +1,31 @@
+# Varinta LLC website
+
+**Current deployment (2026-09-11):** GitHub Pages from https://github.com/robertemoynihan-tech/varintallc-site (branch `main`, root). This folder is that git repo. To publish a change:
+
+```
+git add -A
+git commit -m "describe the change"
+git push
+```
+
+Pages rebuilds in about a minute. Custom domain is set to varintallc.com via the `CNAME` file (do not delete it). DNS lives at Squarespace Domains; records required are in the "GitHub Pages DNS" section below. After DNS resolves, turn on **Enforce HTTPS** in the repo's Settings → Pages.
+
+## GitHub Pages DNS (Squarespace Domains → DNS settings → Custom records)
+
+| Type | Host | Data |
+|---|---|---|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+| CNAME | www | robertemoynihan-tech.github.io |
+
+Delete any pre-existing Squarespace A records on `@` (198.185.159.x / 198.49.23.x) and any Squarespace CNAME on `www`, or the site will keep landing on Squarespace's parking page.
+
+---
+
+The Netlify / Cloudflare Pages instructions below are kept as alternatives.
+
 # Varinta website
 
 A plain static website. Five HTML pages, one CSS file, one SVG icon. No framework, no
