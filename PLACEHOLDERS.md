@@ -10,8 +10,8 @@ few placeholders are HTML comments rather than visible blocks — the search bel
 
 | Where | What | Notes |
 |-------|------|-------|
-| Footer, email line | `[PLACEHOLDER_EMAIL]` | Your business email. It appears **twice per page** in the footer — once in the `href="mailto:..."` and once as the visible link text. Replace both, in all five files. |
-| Footer, HTML comment on the entity line | Legal entity name | The footer now reads "Varinta LLC · San Diego". Confirm the suffix once the Articles of Organization are filed, and change it in **all five** HTML files if it is not "LLC". |
+| Footer, email line | ~~`[PLACEHOLDER_EMAIL]`~~ | DONE 2026-09-14: robert@varintallc.com on all five pages, plus a LinkedIn link (https://www.linkedin.com/company/varintallc/) beneath it. |
+| Footer, entity line | ~~Legal entity name~~ | DONE: Varinta LLC filed 2026-09-11; comment removed. |
 
 Also site-wide, not marked as placeholders but check before launch:
 
